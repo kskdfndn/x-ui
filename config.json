@@ -1,0 +1,80 @@
+{
+  "api": {
+    "base_url": "",
+    "endpoints": {},
+    "timeout": 6,
+    "retry_attempts": 2
+  },
+
+  "tor": {
+    "rotate_seconds": 300,
+    "strict_nodes": true,
+    "bootstrap_timeout": 240,
+    "verify_max_retries": 15,
+    "verify_retry_sleep": 4,
+    "circuit_settle_sleep": 6,
+    "parallel_bootstrap": true,
+    "parallel_verify": true,
+
+    "exclude_countries": ["ir", "kp", "cn", "ru", "sy", "cu", "ve", "ua", "by", "uz", "kz", "tm", "kg", "tj", "az", "am", "ge", "md"],
+
+    "countries": [
+      { "code": "de", "label": "Germany",         "port": 9050, "control_port": 9150, "inbound_port": 8081, "path": "/de"  },
+      { "code": "fr", "label": "France",          "port": 9051, "control_port": 9151, "inbound_port": 8082, "path": "/fr"  },
+      { "code": "tr", "label": "Turkey",          "port": 9052, "control_port": 9152, "inbound_port": 8083, "path": "/tr"  },
+      { "code": "nl", "label": "Netherlands",     "port": 9053, "control_port": 9153, "inbound_port": 8084, "path": "/nl"  },
+      { "code": "se", "label": "Sweden",          "port": 9054, "control_port": 9154, "inbound_port": 8085, "path": "/se"  },
+      { "code": "ch", "label": "Switzerland",     "port": 9055, "control_port": 9155, "inbound_port": 8086, "path": "/ch"  },
+      { "code": "fi", "label": "Finland",         "port": 9056, "control_port": 9156, "inbound_port": 8087, "path": "/fi"  },
+      { "code": "gb", "label": "United Kingdom",  "port": 9057, "control_port": 9157, "inbound_port": 8088, "path": "/gb"  },
+      { "code": "ca", "label": "Canada",          "port": 9058, "control_port": 9158, "inbound_port": 8089, "path": "/ca"  },
+      { "code": "us", "label": "United States",   "port": 9059, "control_port": 9159, "inbound_port": 8090, "path": "/us"  },
+      { "code": "jp", "label": "Japan",           "port": 9060, "control_port": 9160, "inbound_port": 8091, "path": "/jp"  },
+      { "code": "sg", "label": "Singapore",       "port": 9061, "control_port": 9161, "inbound_port": 8092, "path": "/sg"  },
+      { "code": "au", "label": "Australia",       "port": 9062, "control_port": 9162, "inbound_port": 8093, "path": "/au"  },
+      { "code": "it", "label": "Italy",           "port": 9063, "control_port": 9163, "inbound_port": 8094, "path": "/it"  },
+      { "code": "es", "label": "Spain",           "port": 9064, "control_port": 9164, "inbound_port": 8095, "path": "/es"  },
+      { "code": "pl", "label": "Poland",          "port": 9065, "control_port": 9165, "inbound_port": 8096, "path": "/pl"  },
+      { "code": "no", "label": "Norway",          "port": 9066, "control_port": 9166, "inbound_port": 8097, "path": "/no"  },
+      { "code": "dk", "label": "Denmark",         "port": 9067, "control_port": 9167, "inbound_port": 8098, "path": "/dk"  },
+      { "code": "ro", "label": "Romania",         "port": 9068, "control_port": 9168, "inbound_port": 8099, "path": "/ro"  },
+      { "code": "ie", "label": "Ireland",         "port": 9069, "control_port": 9169, "inbound_port": 8100, "path": "/ie"  }
+    ],
+
+    "verification": {
+      "enabled": true,
+      "check_interval": 60,
+      "max_failures": 5,
+      "test_urls": [
+        "https://api.ipify.org",
+        "https://icanhazip.com",
+        "https://ifconfig.me/ip",
+        "https://checkip.amazonaws.com"
+      ],
+      "geoip_providers": [
+        "ip-api.com",
+        "ipinfo.io",
+        "ipwho.is",
+        "ipapi.co"
+      ]
+    }
+  },
+
+  "xui": {
+    "internal_port": 2053,
+    "web_base_path": "/managepanel",
+    "default_username": "admin",
+    "default_password": "admin"
+  },
+
+  "direct": {
+    "enabled": true,
+    "port": 8080,
+    "path": "/direct",
+    "tag": "direct-inbound"
+  },
+
+  "server": {
+    "public_port": 3000
+  }
+}
